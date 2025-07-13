@@ -1,0 +1,214 @@
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #e0e7ff 0%, #f3e8ff 100%);
+}
+
+.email-sender-container {
+  max-width: 500px;
+  margin: 20px;
+  padding: 40px;
+  background: linear-gradient(145deg, #ffffff 0%, #f0f4ff 100%);
+  border-radius: 20px;
+  box-shadow: 
+    0 12px 24px rgba(0, 0, 0, 0.1),
+    0 0 0 1px rgba(255, 255, 255, 0.8);
+  position: relative;
+  overflow: hidden;
+  backdrop-filter: blur(12px);
+}
+
+.email-sender-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+}
+
+.email-sender-title {
+  color: #1e3a8a;
+  font-size: 2.5rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 10px;
+  letter-spacing: -0.02em;
+  font-family: 'Inter', sans-serif;
+}
+
+.email-sender-subtitle {
+  color: #475569;
+  font-size: 1.1rem;
+  text-align: center;
+  margin-bottom: 30px;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+.email-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.input-group {
+  position: relative;
+}
+
+.email-input {
+  width: 100%;
+  padding: 16px 24px;
+  border: 1px solid #d1d5db;
+  border-radius: 12px;
+  font-size: 1rem;
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+  outline: none;
+  color: #1e3a8a;
+}
+
+.email-input:focus {
+  border-color: #3b82f6;
+  box-shadow: 
+    0 0 0 3px rgba(59, 130, 246, 0.2),
+    0 4px 12px rgba(0, 0, 0, 0.1);
+  transform: translateY(-1px);
+}
+
+.email-input::placeholder {
+  color: #9ca3af;
+  font-style: normal;
+}
+
+.subscribe-button {
+  padding: 16px 24px;
+  background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.subscribe-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  background: linear-gradient(135deg, #2563eb 0%, #7c3aed 100%);
+}
+
+.subscribe-button:active {
+  transform: translateY(0);
+}
+
+.features-list {
+  margin-top: 24px;
+  padding: 0;
+  list-style: none;
+  text-align: center;
+}
+
+.features-list li {
+  color: #475569;
+  font-size: 0.95rem;
+  padding: 6px 0;
+  position: relative;
+  line-height: 1.5;
+}
+
+.features-list li::before {
+  content: '✓';
+  color: #10b981;
+  font-size: 1rem;
+  margin-right: 8px;
+}
+
+.luxury-accent {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 48px;
+  height: 48px;
+  background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  color: white;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .email-sender-container {
+    margin: 20px;
+    padding: 30px;
+  }
+  
+  .email-sender-title {
+    font-size: 2rem;
+  }
+  
+  .email-sender-subtitle {
+    font-size: 1rem;
+  }
+  
+  .email-input,
+  .subscribe-button {
+    padding: 14px 20px;
+  }
+  
+  .luxury-accent {
+    top: 15px;
+    right: 15px;
+    width: 40px;
+    height: 40px;
+    font-size: 1.2rem;
+  }
+}
+
+/* Toast customization */
+.Toastify__toast-container {
+  z-index: 9999;
+}
+
+.Toastify__toast--success {
+  background: linear-gradient(135deg, #ecfdf5 0%, #d1fae5 100%);
+  color: #065f46;
+  border: 1px solid #6ee7b7;
+  box-shadow: 0 8px 24px rgba(16, 185, 129, 0.2);
+}
+
+.Toastify__toast--error {
+  background: linear-gradient(135deg, #fef2f2 0%, #fee2e2 100%);
+  color: #991b1b;
+  border: 1px solid #f87171;
+  box-shadow: 0 8px 24px rgba(239, 68, 68, 0.2);
+}
+
+.Toastify__progress-bar--success {
+  background: linear-gradient(90deg, #10b981, #059669);
+}
+
+.Toastify__progress-bar--error {
+  background: linear-gradient(90deg, #ef4444, #dc2626);
+}
